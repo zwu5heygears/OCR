@@ -15,8 +15,6 @@
 #include <include/args.h>
 #include <include/paddleocr.h>
 
-#include "auto_log/autolog.h"
-
 namespace PaddleOCR {
 
 PPOCR::PPOCR() {
@@ -162,32 +160,6 @@ void PPOCR::reset_timer() {
   this->time_info_det = {0, 0, 0};
   this->time_info_rec = {0, 0, 0};
   this->time_info_cls = {0, 0, 0};
-}
-
-void PPOCR::benchmark_log(int img_num) {
-  if (this->time_info_det[0] + this->time_info_det[1] + this->time_info_det[2] >
-      0) {
-    AutoLogger autolog_det("ocr_det", FLAGS_use_gpu, FLAGS_use_tensorrt,
-                           FLAGS_enable_mkldnn, FLAGS_cpu_threads, 1, "dynamic",
-                           FLAGS_precision, this->time_info_det, img_num);
-    autolog_det.report();
-  }
-  if (this->time_info_rec[0] + this->time_info_rec[1] + this->time_info_rec[2] >
-      0) {
-    AutoLogger autolog_rec("ocr_rec", FLAGS_use_gpu, FLAGS_use_tensorrt,
-                           FLAGS_enable_mkldnn, FLAGS_cpu_threads,
-                           FLAGS_rec_batch_num, "dynamic", FLAGS_precision,
-                           this->time_info_rec, img_num);
-    autolog_rec.report();
-  }
-  if (this->time_info_cls[0] + this->time_info_cls[1] + this->time_info_cls[2] >
-      0) {
-    AutoLogger autolog_cls("ocr_cls", FLAGS_use_gpu, FLAGS_use_tensorrt,
-                           FLAGS_enable_mkldnn, FLAGS_cpu_threads,
-                           FLAGS_cls_batch_num, "dynamic", FLAGS_precision,
-                           this->time_info_cls, img_num);
-    autolog_cls.report();
-  }
 }
 
 PPOCR::~PPOCR() {
