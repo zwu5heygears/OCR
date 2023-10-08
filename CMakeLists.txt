@@ -1,8 +1,6 @@
 project(ppocr CXX C)
 cmake_minimum_required(VERSION 3.14)
-
-SET(PADDLE_LIB "/home/heygears/Desktop/ppocr/paddle_inference/")
-
+SET(PADDLE_LIB "/home/heygears/Desktop/ppocr/paddle_inference/")  # 设置变量
 set(DEMO_NAME "ppocr")
 
 find_package(OpenCV REQUIRED)
@@ -10,6 +8,7 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 
 include_directories("${PADDLE_LIB}/paddle/include")
 link_directories("${PADDLE_LIB}/paddle/lib")
+include_directories("${CMAKE_SOURCE_DIR}/")
 
 include_directories("${PADDLE_LIB}/third_party/install/protobuf/include")
 include_directories("${PADDLE_LIB}/third_party/install/glog/include")
@@ -21,10 +20,7 @@ include_directories("${PADDLE_LIB}/third_party/install/paddle2onnx/include")
 include_directories("${PADDLE_LIB}/third_party/boost")
 include_directories("${PADDLE_LIB}/third_party/eigen3")
 
-include_directories("${CMAKE_SOURCE_DIR}/")
-
 link_directories("${PADDLE_LIB}/third_party/install/zlib/lib")
-
 link_directories("${PADDLE_LIB}/third_party/install/protobuf/lib")
 link_directories("${PADDLE_LIB}/third_party/install/glog/lib")
 link_directories("${PADDLE_LIB}/third_party/install/gflags/lib")

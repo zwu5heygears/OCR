@@ -37,7 +37,7 @@ DEFINE_double(det_db_box_thresh, 0.6, "Threshold of det_db_box_thresh.");
 DEFINE_double(det_db_unclip_ratio, 1.5, "Threshold of det_db_unclip_ratio.");
 DEFINE_bool(use_dilation, false, "Whether use the dilation on output map.");
 DEFINE_string(det_db_score_mode, "slow", "Whether use polygon score.");
-DEFINE_bool(visualize, true, "Whether show the detection results.");
+DEFINE_bool(visualize, false, "Whether show the detection results.");
 // classification related
 DEFINE_bool(use_angle_cls, true, "Whether use use_angle_cls.");
 DEFINE_string(cls_model_dir, "../inference/cls", "Path of cls inference model.");

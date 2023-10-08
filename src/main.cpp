@@ -21,22 +21,21 @@ using namespace PaddleOCR;
 
 int main(int argc, char **argv)
 {
-    std::string image = "/home/heygears/Desktop/3.png";
+    std::string image = "/home/heygears/Desktop/1.png";
     cv::Mat img = cv::imread(image, cv::IMREAD_COLOR);
     if (!img.data)
     {
         return 0;
     }
     PPOCR ocr = PPOCR();
-    ocr.reset_timer();
-    std::vector<cv::Mat> img_list;
-    img_list.push_back(img);
-    std::vector<std::vector<OCRPredictResult>> ocr_results = ocr.ocr(img_list, true, true, true);
+    std::vector<cv::Mat> img_list{img};
+    std::vector<std::vector<OCRPredictResult>> ocr_results = ocr.ocr(img_list, true, false, false);
     for(auto &r : ocr_results)
     {
-        for(auto &rr : r){
-            std::cout << rr.text << " " << rr.score << std::endl;
-        }
+//        for(auto &rr : r){
+//            std::cout << rr.text << " " << rr.score << std::endl;
+//        }
+        Utility::print_result(r);
     }
     return 0;
 }
