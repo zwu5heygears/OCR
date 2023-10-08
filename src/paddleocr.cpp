@@ -17,13 +17,6 @@
 
 #include "auto_log/autolog.h"
 
-#define FLAGS_det true
-#define FLAGS_rec true
-#define FLAGS_cls true
-#define FLAGS_det_model_dir "./inference/det_db"
-#define FLAGS_rec_model_dir "./inference/rec"
-#define FLAGS_cls_model_dir "./inference/cls"
-#define FLAGS_use_angle_cls true
 namespace PaddleOCR {
 
 PPOCR::PPOCR() {

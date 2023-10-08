@@ -21,7 +21,7 @@ using namespace PaddleOCR;
 
 int main(int argc, char **argv)
 {
-    std::string image = "/home/heygears/Desktop/2.png";
+    std::string image = "/home/heygears/Desktop/1.png";
     cv::Mat img = cv::imread(image, cv::IMREAD_COLOR);
     if (!img.data)
     {
