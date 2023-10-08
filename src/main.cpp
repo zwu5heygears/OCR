@@ -21,7 +21,7 @@ using namespace PaddleOCR;
 
 int main(int argc, char **argv)
 {
-    std::string image = "/home/heygears/Desktop/1.png";
+    std::string image = "/home/heygears/Desktop/3.png";
     cv::Mat img = cv::imread(image, cv::IMREAD_COLOR);
     if (!img.data)
     {
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
     for(auto &r : ocr_results)
     {
         for(auto &rr : r){
-            std::cout << rr.text << rr.score << std::endl;
+            std::cout << rr.text << " " << rr.score << std::endl;
         }
     }
     return 0;
