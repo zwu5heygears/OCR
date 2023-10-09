@@ -29,7 +29,7 @@ int main(int argc, char **argv)
     }
     PPOCR ocr = PPOCR();
     std::vector<cv::Mat> img_list{img};
-    std::vector<std::vector<OCRPredictResult>> ocr_results = ocr.ocr(img_list, true, false, false);
+    std::vector<std::vector<OCRPredictResult>> ocr_results = ocr.ocr(img_list, true, true, true);
     for(auto &r : ocr_results)
     {
 //        for(auto &rr : r){

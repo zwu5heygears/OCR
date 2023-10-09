@@ -2,3 +2,5 @@ cmake-build-debug/
 .idea/
 opencv3/
 paddle_inference/
+*.txt.user
+build-ppocr-gcc-Debug/

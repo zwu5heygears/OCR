@@ -1,6 +1,6 @@
 project(ppocr CXX C)
 cmake_minimum_required(VERSION 3.14)
-SET(PADDLE_LIB "/home/heygears/Desktop/ppocr/paddle_inference/")  # 设置变量
+SET(PADDLE_LIB "/home/heygears/Desktop/ppocr/paddle_inference/") # 绝对路径
 set(DEMO_NAME "ppocr")
 
 find_package(OpenCV REQUIRED)
